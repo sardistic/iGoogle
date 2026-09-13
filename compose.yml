@@ -6,7 +6,9 @@ services:
     cap_drop: ["ALL"]
     pids_limit: 64
     read_only: true
-    tmpfs: [/var/cache/nginx, /var/run]
+    tmpfs:
+      - /var/cache/nginx:mode=1777
+      - /var/run:mode=1777
     mem_limit: 64m
     networks:
       edge:
