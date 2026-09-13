@@ -1,0 +1,4 @@
+.agent/runtime/
+docs/agent/HANDOFF.md
+.edge-*/
+*-preview.png

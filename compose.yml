@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    security_opt: ["no-new-privileges:true"]
+    read_only: true
+    tmpfs: [/var/cache/nginx, /var/run]
+    mem_limit: 64m
+    networks:
+      edge:
+        aliases: [sard-igoogle]
+networks:
+  edge:
+    external: true

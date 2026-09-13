@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#86aeb1">
+  <meta name="description" content="A functional revival of Google's customizable iGoogle homepage.">
+  <title>iGoogle</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="service-bar">
+    <nav aria-label="Google services"><a class="selected" href="https://www.google.com/">Web</a><a href="https://images.google.com/">Images</a><a href="https://news.google.com/">News</a><a href="https://maps.google.com/">Maps</a><a href="https://mail.google.com/">Gmail</a><a href="https://www.youtube.com/">YouTube</a><button class="link-button" id="more-services">more ▾</button></nav>
+    <nav class="account-links"><button class="link-button" id="set-home">Make iGoogle my homepage</button><span>|</span><button class="link-button" id="reset-dashboard">Reset</button><span>|</span><a href="https://accounts.google.com/">Sign in</a></nav>
+    <div class="services-menu" id="services-menu" hidden><a href="https://drive.google.com/">Drive</a><a href="https://calendar.google.com/">Calendar</a><a href="https://translate.google.com/">Translate</a><a href="https://books.google.com/">Books</a><a href="https://photos.google.com/">Photos</a></div>
+  </header>
+  <section class="masthead theme-bus" id="masthead">
+    <div class="sky-art" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="search-area"><div class="igoogle-logo" aria-label="iGoogle"><span>i</span>Google</div><form id="google-search" action="https://www.google.com/search" method="get"><label class="sr-only" for="search-query">Search Google</label><input id="search-query" name="q" autocomplete="off"><div><button type="submit">Google Search</button><button type="button" id="lucky-search">I'm Feeling Lucky</button></div></form><div class="search-extras"><a href="https://www.google.com/advanced_search">Advanced Search</a><a href="https://www.google.com/preferences">Preferences</a><a href="https://www.google.com/language_tools">Language Tools</a></div></div>
+    <div class="bus-scene" aria-hidden="true"><span>▥</span><span>♟</span><span>☂</span><span>♟</span><span>☂</span><span>♙</span><span>☂</span><span>♟</span><span>♞</span></div>
+  </section>
+  <nav class="tab-strip" aria-label="Dashboard tabs"><div class="tabs" id="tabs"></div><button class="add-tab-button" id="add-tab">＋ Add a tab</button><div class="dashboard-actions"><button id="theme-button">Select theme</button><span>|</span><button id="layout-button">Layout ▾</button><span>|</span><button id="add-stuff">Add stuff »</button></div></nav>
+  <main class="dashboard-shell">
+    <aside class="gadget-catalog" id="gadget-catalog" aria-label="Gadget directory" hidden><div class="catalog-heading"><div><h1>Add stuff to your homepage</h1><p>Choose gadgets, feeds, games and tools.</p></div><button class="close-button" data-close="catalog" aria-label="Close gadget directory">×</button></div><div class="catalog-tools"><label><span class="sr-only">Search gadgets</span><input id="catalog-search" placeholder="Search gadgets"></label><button id="search-catalog">Search</button><button class="secondary" id="custom-feed-button">Add feed or gadget by URL</button></div><div class="catalog-body"><nav class="catalog-categories" id="catalog-categories"></nav><section class="catalog-results" id="catalog-results"></section></div></aside>
+    <section class="dashboard" id="dashboard" aria-live="polite"></section><div class="empty-dashboard" id="empty-dashboard" hidden><h2>Make this tab your own</h2><p>Add news, tools, games, feeds and more.</p><button id="empty-add">Look for new stuff to add</button></div>
+  </main>
+  <dialog id="app-dialog" class="app-dialog"><form method="dialog"><button class="dialog-close" value="cancel" aria-label="Close">×</button><div id="dialog-content"></div></form></dialog><div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <template id="gadget-template"><article class="gadget" draggable="true"><header class="gadget-header"><span class="gadget-icon"></span><h2></h2><div class="gadget-controls"><button data-action="settings" title="Settings">⚙</button><button data-action="expand" title="Expand">□</button><button data-action="minimize" title="Minimize">−</button><button data-action="remove" title="Remove">×</button></div></header><div class="gadget-content"></div></article></template>
+  <script src="script.js"></script>
+</body></html>
