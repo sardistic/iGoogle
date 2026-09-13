@@ -11,3 +11,7 @@ The container listens on port 8080, has no published host port in Compose, runs 
 ## 2026-09-12 — static-site security boundary
 
 The frontend is constrained by a Content Security Policy to its own scripts/styles and the explicit live-gadget API allowlist. User- and API-provided navigation/image URLs accept only HTTP(S). The nginx runtime drops root and all Linux capabilities, retains a read-only filesystem, and uses the current stable Alpine image line.
+
+## 2026-09-12 — first-party analytics
+
+The public deployment uses the self-hosted Umami instance at `analytics.sardistic.com`, scoped to `google.sardistic.com` and honoring browser Do Not Track. The analytics origin is explicitly allowlisted for scripts and collection requests in the site Content Security Policy. Dashboard preferences and gadget data remain browser-local and are not sent to Umami.
